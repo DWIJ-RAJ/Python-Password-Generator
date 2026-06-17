@@ -1,35 +1,41 @@
-Password Generator
+Python Password Generator
 
-This is a secure and user-friendly Password Generator application built with Python. It allows users to generate random, strong passwords with customizable lengths.
+A professional, GUI-based password generator application built with Python and Tkinter. This tool helps users create secure, random passwords with a built-in strength assessment and convenient clipboard functionality.
 
-Features
+✨ Features
+Custom Password Generation: Generate random passwords based on user-defined length.
 
-Custom Length: Users can specify the desired length of the password.
+Strength Assessment: Real-time feedback on password strength (Weak, Medium, Strong).
 
-Strength Meter: Real-time feedback on password strength (Weak, Medium, Strong).
+Clipboard Support: Copy generated passwords directly to the clipboard with one click.
 
-Copy to Clipboard: Easily copy generated passwords with a single click.
+History Management: Keep track of your generated passwords in a local history list.
 
-GUI Interface: Simple and clean user interface built with tkinter.
+Clear History: Easily clear the password history with a single button.
 
-Requirements
+Persistent Storage: Automatically saves your generated passwords to a local text file (password_history.txt).
 
-To run this application, you need to install the pyperclip library:
+🛠 Tech Stack
+
+Language: Python
+
+GUI Framework: Tkinter
+
+External Library: pyperclip (for clipboard operations)
+
+🚀 How to Run
+
+Ensure you have Python installed on your system.
+
+Install the necessary library:
+
+Bash
 pip install pyperclip
+Run the script:
 
-How to Run
+Bash
+python Advanced_password_generate_copy_paste.py
+<img width="295" height="380" alt="Screenshot 2026-06-17 151818" src="https://github.com/user-attachments/assets/676a95a5-816c-4c1b-894b-d2b712979641" />
 
-Clone this repository or download the source code.
-
-Run the script using Python:
-
-python password_generator.py
-Enter the desired length, click "Generate", and then "Copy" your password!
-
-Technologies Used
-
-Python
-
-Tkinter (GUI)
-
-Random & String modules
+📜 License
+This project is licensed under the MIT License.

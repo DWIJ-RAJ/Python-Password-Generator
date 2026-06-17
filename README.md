@@ -3,7 +3,7 @@
 
 A professional, GUI-based password generator application built with Python and Tkinter. This tool helps users create secure, random passwords with a built-in strength assessment and convenient clipboard functionality.
 
-✨ Features
+# ✨ Features
 Custom Password Generation: Generate random passwords based on user-defined length.
 
 Strength Assessment: Real-time feedback on password strength (Weak, Medium, Strong).
@@ -16,7 +16,7 @@ Clear History: Easily clear the password history with a single button.
 
 Persistent Storage: Automatically saves your generated passwords to a local text file (password_history.txt).
 
-🛠 Tech Stack
+# 🛠 Tech Stack
 
 Language: Python
 
@@ -24,13 +24,11 @@ GUI Framework: Tkinter
 
 External Library: pyperclip (for clipboard operations)
 
-🚀 How to Run
 
+# 🚀 How to Run
 Ensure you have Python installed on your system.
 
-Install the necessary library:
-
-Bash
+# Install the necessary library:
 pip install pyperclip
 Run the script:
 

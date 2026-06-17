@@ -32,9 +32,9 @@ Ensure you have Python installed on your system.
 pip install pyperclip
 Run the script:
 
-Bash
+# picture 
 python Advanced_password_generate_copy_paste.py
 <img width="295" height="380" alt="Screenshot 2026-06-17 151818" src="https://github.com/user-attachments/assets/676a95a5-816c-4c1b-894b-d2b712979641" />
 
-📜 License
+# 📜 License
 This project is licensed under the MIT License.

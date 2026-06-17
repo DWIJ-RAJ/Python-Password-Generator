@@ -12,15 +12,13 @@ GUI Interface: Simple and clean user interface built with tkinter.
 
 Requirements
 To run this application, you need to install the pyperclip library:
-
-Bash
 pip install pyperclip
+
 How to Run
 Clone this repository or download the source code.
 
 Run the script using Python:
 
-Bash
 python password_generator.py
 Enter the desired length, click "Generate", and then "Copy" your password!
 

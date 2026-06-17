@@ -1,5 +1,5 @@
 
-# Python Password Generator
+# ⚡ Python Password Generator ⚡
 
 A professional, GUI-based password generator application built with Python and Tkinter. This tool helps users create secure, random passwords with a built-in strength assessment and convenient clipboard functionality.
 

@@ -1,10 +1,10 @@
 import tkinter as tk
 import random
 import string
-import pyperclip  # for copy (write terminal : pip install pyperclip)
+import pyperclip
 
 
-# Password strength check
+# --- All Functions ---
 def check_strength(password):
     if len(password) < 8:
         return "Weak (Too short)", "Red"
@@ -13,68 +13,71 @@ def check_strength(password):
     else:
         return "Medium", "Orange"
 
-def save_to_file(password):
-            with open("password_history.txt", "a") as file:
-                file.write(password + "\n")
 
-# Password generate function
-def generate():
+def save_to_file(password):
+    with open("password_history.txt", "a") as file:
+        file.write(password + "\n")
+
+
+def generate_password():
     try:
         length = int(entry_len.get())
         chars = string.ascii_letters + string.digits + string.punctuation
         password = ''.join(random.choice(chars) for i in range(length))
-        history_listbox.insert(0, password)
-        # show password
-        result_label.config(text=password)
 
-        # strength meter
+        history_listbox.insert(0, password)
+        result_label.config(text=password)
+        save_to_file(password)
+
         strength_text, color = check_strength(password)
         strength_label.config(text=f"Strength: {strength_text}", fg=color)
     except ValueError:
         result_label.config(text="Enter valid number!")
 
 
-# copy function
 def copy_to_clipboard():
     password = result_label.cget("text")
     if password and password != "Enter valid number!":
         pyperclip.copy(password)
 
 
-# Main window setup
-root = tk.Tk()
-root.title("Advanced Password Gen")
-root.geometry("400x400")
+def clear_history():
+    history_listbox.delete(0, tk.END,)
 
-# GUI design
-tk.Label(root, text="Password length:", font=("Arial", 14, "bold")).pack(pady=20)
+
+# --- Main Window Setup ---
+root = tk.Tk()
+root.title("Advanced Password Generator")
+root.geometry("400x500")
+
+# --- GUI Design ---
+tk.Label(root, text="Password Length:", font=("Arial", 14, "bold"),bg="White", fg="Black").pack(pady=10)
 entry_len = tk.Entry(root)
 entry_len.pack()
 
-generate_button = tk.Button(root, text="Generate Your Password", font=("Arial", 14, "bold"),
-                            command=generate, bg="White",fg="Blue")
-generate_button.pack(pady=20)
+generate_button = tk.Button(root, text="Generate Your Password", font=("Arial", 14), command=generate_password, bg="White",
+                            fg="Blue")
+generate_button.pack(pady=10)
 
 result_label = tk.Label(root, text="", font=("Arial", 14, "bold"), fg="Black")
-result_label.pack(pady=20)
+result_label.pack(pady=10)
 
-# history label
-tk.Label(root, text="Password History:", font=("Arial", 10)).pack(pady=5)
+strength_label = tk.Label(root, text="", font=("Arial", 10, "bold"))
+strength_label.pack()
 
-# listbox and scrollbar
+# History label and Listbox
+tk.Label(root, text="Password History:", font=("Arial", 10, "bold"),).pack(pady=5)
 history_frame = tk.Frame(root)
 history_frame.pack(pady=5)
 
 scrollbar = tk.Scrollbar(history_frame, orient=tk.VERTICAL)
 history_listbox = tk.Listbox(history_frame, width=40, height=5, yscrollcommand=scrollbar.set)
-
 scrollbar.config(command=history_listbox.yview)
 scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
 history_listbox.pack(side=tk.LEFT)
 
-strength_label = tk.Label(root, text="", font=("Arial", 10, "bold"))
-strength_label.pack(pady=5)
-
-tk.Button(root, text="Copy to Clipboard", font=("Arial", 12), command=copy_to_clipboard, bg="white").pack(pady=20)
+# Buttons
+tk.Button(root, text="Copy to Clipboard", font=("Arial", 10,"bold"), command=copy_to_clipboard).pack(pady=5)
+tk.Button(root, text="Clear History", font=("Arial", 10,"bold"),fg="Red", command=clear_history).pack(pady=5)
 
 root.mainloop()

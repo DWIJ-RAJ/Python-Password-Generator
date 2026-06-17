@@ -13,6 +13,9 @@ def check_strength(password):
     else:
         return "Medium", "Orange"
 
+def save_to_file(password):
+            with open("password_history.txt", "a") as file:
+                file.write(password + "\n")
 
 # Password generate function
 def generate():
@@ -21,11 +24,6 @@ def generate():
         chars = string.ascii_letters + string.digits + string.punctuation
         password = ''.join(random.choice(chars) for i in range(length))
         history_listbox.insert(0, password)
-
-        def save_to_file(password):
-            with open("password_history.txt", "a") as file:
-                file.write(password + "\n")
-
         # show password
         result_label.config(text=password)
 

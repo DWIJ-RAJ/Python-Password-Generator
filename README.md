@@ -18,6 +18,7 @@ To run this application, you need to install the pyperclip library:
 pip install pyperclip
 
 How to Run
+
 Clone this repository or download the source code.
 
 Run the script using Python:
@@ -26,6 +27,7 @@ python password_generator.py
 Enter the desired length, click "Generate", and then "Copy" your password!
 
 Technologies Used
+
 Python
 
 Tkinter (GUI)
